@@ -1,0 +1,240 @@
+/* Some resets */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Better box-sizing */
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/* TODO: Get correct body fonts */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+/* Page Component */
+.c-page {
+    width: 100%;
+    max-width: 1000px;
+    max-width: 62.5rem;
+    margin: 0 auto;
+    padding: 20px;
+    padding: 1.25rem;
+}
+
+.c-page-header {
+    margin-bottom: 12px;
+    margin-bottom: 0.75rem;    
+}
+
+.c-page-nav-item {
+    margin: 0 6px;
+    margin: 0 0.375rem;
+}
+
+.c-page-title {
+    margin-bottom: 12px;
+    margin-bottom: 0.75rem;
+    font-size: 18px;
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.c-page-body {
+    font-size: 0;
+    overflow-x: hidden;
+}
+
+    .c-page-content {
+        padding: 12px 0;
+        padding: 0.75rem 0;
+    }
+
+    .c-page-sidebar {
+        padding: 12px;
+        padding: 0.75rem;
+        font-size: 1rem;
+    }
+
+    .c-page-sidebar.is-hidden {
+        display: none;
+    }
+
+
+/* Article Component */
+/* **** TODO: Get correct fonts, font-size, spacing sizes for image, title, intro **** */
+.c-articles {
+    font-size: 0;
+}
+
+    .c-article {
+        display: inline-block;
+        vertical-align: top;
+        margin-bottom: 6px;
+        margin-bottom: 0.375rem;
+        padding: 6px;
+        padding: 0.375rem;
+    }
+
+        .c-article-title {
+            font-size: 18px;
+            font-size: 1.125rem;
+            margin-bottom: 8px;
+            margin-bottom: 0.5rem;
+            color: black;
+        }
+
+            .c-article-intro {
+                line-height: 1.6;
+                font-size: 12px;
+                font-size: 0.75rem;
+                color: slategray;
+            }
+
+            .c-article-title-link {
+                text-decoration: none;
+                color: inherit;
+            }
+
+        .c-article-media {
+            margin-bottom: 12px;
+            margin-bottom: 0.75rem;
+            padding: 0;
+        }
+
+            .c-article-image {
+                width: 100%;
+            }
+
+/* Utilities */
+.u-display-block {
+    display: block !important;
+}
+
+/* @ 375px + */
+@media screen and (min-width: 23.4375em) {
+    
+    /* Article Component */
+    .c-article {
+        width: 50%;
+    }
+
+    .c-article-title {
+        font-size: 19px;
+        font-size: 1.1875rem;
+        margin-bottom: 10px;
+        margin-bottom: 0.625rem;
+    }
+
+        .c-article-intro {
+            font-size: 14px;
+            font-size: 0.875rem;
+        }
+
+    .c-article-media {
+        margin-bottom: 14px;
+        margin-bottom: 0.875rem;
+    }
+
+}
+
+/* @ 1024px + */
+@media screen and (min-width: 50em) {
+    
+
+    /* Page Component */
+    .c-page {
+        padding: 40px;
+        padding: 2.5rem;
+    }
+
+    .c-page-content,
+    .c-page-sidebar {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+        .c-page-content {
+            width: 70%;
+        }
+
+        .c-page-sidebar {
+            width: 30%;
+        }
+
+        .c-page-sidebar {
+            -ms-transition: transform 0.33s ease;
+            -moz-transition: transform 0.33s ease;
+            -webkit-transition: transform 0.33s ease;
+            transition: transform 0.33s ease;
+        }
+
+        .c-page-sidebar.is-hidden {
+            display: inline-block;
+            -ms-transform: translate(100%,0);
+            -moz-transform: translate(100%,0);
+            -webkit-transform: translate(100%,0);
+            transform: translate(100%,0);
+        }
+
+    /* Article Component */
+    .c-article {
+        width: 33.333%;
+    }
+
+}
